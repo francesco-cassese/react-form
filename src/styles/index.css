@@ -12,6 +12,10 @@
   CARD
 */
 
+.card {
+  height: 100%;
+}
+
 .card img {
   display: block;
   object-fit: cover;
