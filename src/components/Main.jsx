@@ -1,8 +1,8 @@
-import Card from "./card";
+import Card from "./CardList";
 import FormArticoli from "./FormArticoli";
 
 function Main(props) {                                     // Ricevo 'props' dal padre (App.jsx)
-    const { lista, add, onDelete } = props;                  // Destructuring: tiro fuori 'lista' e 'add'
+    const { lista, add, onDelete, onEdit } = props;        // Destructuring: tiro fuori 'lista' e 'add'
     return (
         <main className="container my-5">
 
@@ -11,7 +11,8 @@ function Main(props) {                                     // Ricevo 'props' dal
                     <h2 className="mb-4">Lista Blog</h2>
                     <Card
                         listaElements={lista}
-                        onDelete={onDelete} />
+                        onDelete={onDelete}
+                        onEdit={onEdit} />
                 </section>
             </div>
 

@@ -16,12 +16,23 @@ function App() {
     // Tengo solo gli articoli che NON hanno l'id che voglio cancellare
     setArticoli(articoli.filter(articolo => articolo.id !== idDaEliminare));
   };
+
+  const modificaTitolo = (idDaModificare, nuovoTitolo) => {
+    setArticoli(articoli.map(articolo => {
+      if (articolo.id === idDaModificare) {
+        // Restituisco una copia dell'articolo ma con il titolo cambiato
+        return { ...articolo, titolo: nuovoTitolo };
+      }
+      return articolo;
+    }));
+  };
   return <>
     <Header />
     <Main
       lista={articoli}                         // Passo la lista al Main così le Card possono ciclarci sopra
       add={aggiungiArticolo}                   // Passo la funzione 'Aggiungi articolo' tramite props, associandola ad add
       onDelete={cancellaArticolo}              // Passo la funzione 'CancellaArticolo' tramite props, associandola a onDelete
+      onEdit={modificaTitolo}                  // Passo la funzione 'ModificaTitolo' tramite props, associandola a onEdit
     />
   </>
 }
