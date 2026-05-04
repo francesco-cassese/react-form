@@ -43,7 +43,18 @@ function App() {
                 rows="5"
                 placeholder="Di cosa vuoi parlare oggi?"
               ></textarea>
+            </div>
 
+            {/* Caricamento foto */}
+            <div id="add-photo" className="mb-3">
+              <label htmlFor="upload-img" className="form-label fw-semibold">Aggiungi un'immagine:</label>
+              <input
+                type="file"
+                id="upload-img"
+                name="foto"
+                className="form-control"
+                accept="image/*"
+              />
             </div>
 
             {/* Bottone di invio */}
