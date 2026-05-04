@@ -1,15 +1,12 @@
 import Card from "./components/Card";
+import Header from "./components/Header";
 import listaArticoliBlog from "./data/listaArticoliBlog";
 import { useState } from "react";
 
 function App() {
 
   return <>
-    <header className="bg-dark text-white py-4 mb-5 shadow">
-      <div className="container text-center">
-        <h1 className="display-4 fw-bold">React Blog Form</h1>
-      </div>
-    </header>
+    <Header />
     <main>
       <section className="container my-5">
         <div className="row">
