@@ -1,4 +1,4 @@
-const listaProdotti = [
+const listaProdottiCard = [
     {
         id: crypto.randomUUID(),
         titolo: "Zaino Trekking Explorer",
@@ -31,4 +31,4 @@ const listaProdotti = [
     }
 ];
 
-export default listaProdotti;
+export default listaProdottiCard;

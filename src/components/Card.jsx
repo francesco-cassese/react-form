@@ -1,7 +1,7 @@
 function Card(props) {
-    const listaProdottiJsx = props.listaElements.map(protodotto => {
+    const listaProdottiJsx = props.listaElements.map(prodotto => {
         console.log(props.listaElements);
-        const { id, titolo, contenuto, urlImmagine } = protodotto
+        const { id, titolo, contenuto, urlImmagine } = prodotto
         return (
             <li key={id} className="col-12 col-md-4 p-2">
                 <div className="card">
