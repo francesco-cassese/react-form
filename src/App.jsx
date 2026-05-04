@@ -11,11 +11,17 @@ function App() {
   const aggiungiArticolo = nuovoPost => {
     setArticoli([...articoli, nuovoPost]);     // Creo un nuovo array (copio i vecchi e aggiungo il nuovo)
   };
+
+  const cancellaArticolo = idDaEliminare => {
+    // Tengo solo gli articoli che NON hanno l'id che voglio cancellare
+    setArticoli(articoli.filter(articolo => articolo.id !== idDaEliminare));
+  };
   return <>
     <Header />
     <Main
       lista={articoli}                         // Passo la lista al Main così le Card possono ciclarci sopra
       add={aggiungiArticolo}                   // Passo la funzione 'Aggiungi articolo' tramite props, associandola ad add
+      onDelete={cancellaArticolo}              // Passo la funzione 'CancellaArticolo' tramite props, associandola a onDelete
     />
   </>
 }
