@@ -11,6 +11,13 @@ function App() {
       </div>
     </header>
     <main>
+      <section className="container my-5">
+        <div className="row">
+          <div className="col-12">
+            <Card listaElements={listaArticoliBlog} />
+          </div>
+        </div>
+      </section>
       <section className="col-12 col-md-8 mb-5 mx-auto">
         <div className="card shadow-sm border-0 bg-light p-4">
           <h2 className="h4 mb-4 text-primary border-bottom pb-2">Nuovo Articolo</h2>
@@ -48,13 +55,6 @@ function App() {
           </form>
         </div>
       </section>
-      <div className="container my-5">
-        <div className="row">
-          <div className="col-12">
-            <Card listaElements={listaArticoliBlog} />
-          </div>
-        </div>
-      </div>
     </main>
   </>
 }
