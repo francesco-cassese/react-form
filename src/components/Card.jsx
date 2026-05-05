@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function CardSingola(props) {
+function Card(props) {
 
     const { prodotto, onDelete, onEdit } = props;                       // Recupero l'oggetto 'prodotto' e le funzioni dal padre
 
@@ -58,4 +58,4 @@ function CardSingola(props) {
     );
 }
 
-export default CardSingola;
+export default Card;
