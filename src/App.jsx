@@ -13,7 +13,7 @@ function App() {
   };
 
   const cancellaArticolo = idDaEliminare => {
-    // Tengo solo gli articoli che NON hanno l'id che voglio cancellare
+    // Tengo solo gli articoli che non hanno l'id che voglio cancellare
     setArticoli(articoli.filter(articolo => articolo.id !== idDaEliminare));
   };
 
