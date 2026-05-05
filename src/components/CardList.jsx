@@ -1,4 +1,4 @@
-import CardSingola from "./CardSingola"; // Importa il nuovo componente
+import Card from "./Card";
 
 function CardList(props) {
     const { listaElements, onDelete, onEdit } = props;
@@ -6,7 +6,7 @@ function CardList(props) {
     return (
         <ul className="list-unstyled row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
             {listaElements.map(prodotto => (
-                <CardSingola
+                <Card
                     key={prodotto.id}
                     prodotto={prodotto}
                     onDelete={onDelete}

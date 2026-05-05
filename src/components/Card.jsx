@@ -8,9 +8,10 @@ function Card(props) {
 
     const [staModificando, setStaModificando] = useState(false);                    // Stato per gestire la modalità visione/modifica
     const [nuovoTitolo, setNuovoTitolo] = useState(titolo);                         // Stato per il testo temporaneo dell'input
+    const [nuovoContenuto, setNuovoContenuto] = useState(contenuto);                // Stato per il contenuto temporaneo dell'input
 
     const gestisciSalvataggio = () => {                                             // Funzione chiamata al click su 'Salva'
-        onEdit(id, nuovoTitolo);                                                    // Invia la modifica al componente App.jsx
+        onEdit(id, nuovoTitolo, nuovoContenuto);                                    // Invia la modifica al componente App.jsx
         setStaModificando(false);                                                   // Chiude la modalità modifica
     };
 
@@ -22,6 +23,18 @@ function Card(props) {
         />
     ) : (                                                                           // Se 'staModificando' è falso:
         <h5 className="card-title fw-bold">{titolo}</h5>                            // - Mostra il titolo normale
+    );
+
+    const corpoCard = staModificando ? (                                                // Se 'staModificando' è vero (modalità edit):
+        <textarea
+            className="form-control form-control-sm flex-grow-1"
+            value={nuovoContenuto}                                                      // Valore legato allo stato locale del contenuto
+            onChange={event => setNuovoContenuto(event.target.value)}                   // Aggiorna lo stato ad ogni carattere digitato
+        />
+    ) : (                                                                               // Se 'staModificando' è falso
+        <p className="card-text flex-grow-1 text-muted small">
+            {contenuto}                                                                 {/* Mostra il contenuto originale del post */}
+        </p>
     );
 
     const bottoneAzione = staModificando ? (                                        //  Se modifico, mostra 'Salva'
@@ -41,10 +54,7 @@ function Card(props) {
 
                 <div className="card-body d-flex flex-column">
                     {headerCard}
-
-                    <p className="card-text flex-grow-1 text-muted small">
-                        {contenuto}
-                    </p>
+                    {corpoCard}
 
                     <div className="d-flex justify-content-end gap-2 mt-3 border-top pt-2">
                         {bottoneAzione}
